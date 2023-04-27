@@ -21,7 +21,6 @@ async function getWeatherData (cityValue) {
         }
 
         const data = await response.json();
-        console.log(data);
 
         const temperature = Math.round(data.main.temp);
 
@@ -35,7 +34,6 @@ async function getWeatherData (cityValue) {
             `Wind speed: ${Math.round(data.wind.speed)} m/s`
         ];
 
-        console.log(temperature, description);
         weatherDataEl.querySelector(".icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></img>`;
 
         weatherDataEl.querySelector(".temperature").textContent = `${temperature}°C`;
